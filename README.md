@@ -83,27 +83,26 @@ Then open:
 
 ### 1️⃣ POST /strings/ — Analyze a new string
 
-`Request`
-         <pre> ```python
-         {
-           "value": "racecar"
-         }
-`Response` (`201` Created)
-         
-         {
-           "id": "<sha256>",
-           "value": "racecar",
-           "properties": {
-             "length": 7,
-             "is_palindrome": true,
-             "unique_characters": 4,
-             "word_count": 1,
-             "sha256_hash": "<sha256>",
-             "character_frequency_map": {"r":2,"a":2,"c":2,"e":1}
-           },
-           "created_at": "2025-10-21T12:34:56Z"
-         }
-   </pre> ```
+#### `Request`
+            {
+                 "value": "racecar"
+               }
+               
+#### `Response` (`201` Created)
+               {
+                 "id": "<sha256>",
+                 "value": "racecar",
+                 "properties": {
+                   "length": 7,
+                   "is_palindrome": true,
+                   "unique_characters": 4,
+                   "word_count": 1,
+                   "sha256_hash": "<sha256>",
+                   "character_frequency_map": {"r":2,"a":2,"c":2,"e":1}
+                 },
+                 "created_at": "2025-10-21T12:34:56Z"
+               }
+          
 ### 2️⃣ GET /strings/ — List all analyzed strings
 
 Supports filters:
@@ -142,7 +141,7 @@ Example:
 Response:
 `204 No Content`
 
-###🧾 Example Natural Queries
+### 🧾 Example Natural Queries
 #### Query	Parsed Filters
 -all single word palindromic strings	word_count=1, is_palindrome=true
 -strings longer than 10 characters	min_length=11
@@ -161,17 +160,14 @@ Response:
 `python-3.12.6`
 
 #### Example requirements.txt
-      <pre>python
       Django>=5.0
       djangorestframework
       gunicorn
       whitenoise
       python-dotenv
-      dj-database-url
-      </pre>
-
-Then push to GitHub and connect your repo to Leapcell.io.
-leapcell will detect the Django app automatically and build it.
+      dj-database-url      
+#### Then push to GitHub and connect your repo to Leapcell.io.
+#### leapcell will detect the Django app automatically and build it.
 
 ## ✅ API Testing Tips
 
