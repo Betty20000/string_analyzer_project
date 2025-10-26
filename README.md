@@ -44,13 +44,12 @@ Additionally:
     python -m venv venv
 
 ### Activate Virtual Environment:
-    Windows:
-     venv\Scripts\activate
-    Mac/Linux:
-     source venv/bin/activate
+##### Windows:
+      venv\Scripts\activate
+##### Mac/Linux:
+      source venv/bin/activate
 
 ### Install Dependencies
-
       pip install -r requirements.txt
 
 ### ⚙️ Configure Environment Variables
