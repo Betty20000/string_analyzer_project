@@ -36,38 +36,33 @@ Additionally:
 ---
 
 ## 🏗️ Setup & Installation
-###1️⃣ Clone the Repository
-git clone https://github.com/Betty20000/string_analyzer_project.git
-. cd string-analyzer
+### Clone the Repository
+      git clone https://github.com/Betty20000/string_analyzer_project.git
+      cd string-analyzer
 
-### 2️⃣ Create Virtual Environment
-    *python -m venv venv
+### Create Virtual Environment
+    python -m venv venv
 
-#### Activate Virtual Environment:
+### Activate Virtual Environment:
+    Windows:
+     venv\Scripts\activate`
+    Mac/Linux:
+     source venv/bin/activate`
 
-    Windows
+### Install Dependencies
 
-    `venv\Scripts\activate`
+      pip install -r requirements.txt
 
+### ⚙️ Configure Environment Variables
 
-    Mac/Linux
-
-    `source venv/bin/activate`
-
-### 3️⃣ Install Dependencies
-
--pip install -r requirements.txt
-
-## ⚙️ Configure Environment Variables
-
--Create a .env file in the project root:
+#### Create a .env file in the project root:
 
     SECRET_KEY=django-insecure-yourkeyhere
     DEBUG=True
      ALLOWED_HOSTS=127.0.0.1,localhost
 
 
--When deployed on Leapcell, these variables will be automatically injected:
+   When deployed on Leapcell, these variables will be automatically injected:
 
       DATABASE_URL
       DEBUG=False
