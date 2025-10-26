@@ -111,7 +111,7 @@ Then open:
            },
            "created_at": "2025-10-21T12:34:56Z"
          }
-    ```</pre> 
+   </pre> ```
 ### 2️⃣ GET /strings/ — List all analyzed strings
 
 Supports filters:
