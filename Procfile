@@ -1,1 +1,1 @@
-web: gunicorn string_analyzer_project.wsgi
+web: gunicorn string_analyzer.wsgi:application --bind 0.0.0.0:$PORT
