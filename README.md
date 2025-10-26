@@ -62,24 +62,24 @@ git clone https://github.com/Betty20000/string_analyzer_project.git
 
 -Create a .env file in the project root:
 
-    `SECRET_KEY=django-insecure-yourkeyhere`
-    `DEBUG=True`
-     `ALLOWED_HOSTS=127.0.0.1,localhost`
+    SECRET_KEY=django-insecure-yourkeyhere
+    DEBUG=True
+     ALLOWED_HOSTS=127.0.0.1,localhost
 
 
 -When deployed on Leapcell, these variables will be automatically injected:
 
-`DATABASE_URL`
-`DEBUG=False`
-`ALLOWED_HOSTS=*`
+      DATABASE_URL
+      DEBUG=False
+      ALLOWED_HOSTS=*
 
 ## 🧠 Running the Project Locally
 ### Run Migrations
-    *python manage.py makemigrations
-    *python manage.py migrate
+    python manage.py makemigrations
+    python manage.py migrate
 
 ### Start the Server
-`python manage.py runserver`
+      python manage.py runserver
 
 
 Then open:
@@ -90,38 +90,38 @@ Then open:
 ### 1️⃣ POST /strings/ — Analyze a new string
 
 `Request`
-<pre> ```python
-{
-  "value": "racecar"
-}
-
-
-Response (201 Created)
-
-{
-  "id": "<sha256>",
-  "value": "racecar",
-  "properties": {
-    "length": 7,
-    "is_palindrome": true,
-    "unique_characters": 4,
-    "word_count": 1,
-    "sha256_hash": "<sha256>",
-    "character_frequency_map": {"r":2,"a":2,"c":2,"e":1}
-  },
-  "created_at": "2025-10-21T12:34:56Z"
-}
+         <pre> ```python
+         {
+           "value": "racecar"
+         }
+         
+         
+         Response (201 Created)
+         
+         {
+           "id": "<sha256>",
+           "value": "racecar",
+           "properties": {
+             "length": 7,
+             "is_palindrome": true,
+             "unique_characters": 4,
+             "word_count": 1,
+             "sha256_hash": "<sha256>",
+             "character_frequency_map": {"r":2,"a":2,"c":2,"e":1}
+           },
+           "created_at": "2025-10-21T12:34:56Z"
+         }
     ```</pre> 
 ### 2️⃣ GET /strings/ — List all analyzed strings
 
 Supports filters:
 
 Parameter	Description
-- is_palindrome=true / false
-- min_length = Minimum string length
-- max_length = Maximum string length
-- word_count = Exact word count
-- contains_character = Character substring
+- `is_palindrome=true / false`
+- `min_length = Minimum string length`
+- `max_length = Maximum string length`
+- `word_count = Exact word count`
+- `contains_character = Character substring`
 
 Example:
 
@@ -162,21 +162,21 @@ Response:
     * Procfile
     * requirements.txt
     * .env
--Example Procfile
-`web: python manage.py collectstatic --noinput && gunicorn string_analyser.wsgi`
+#### Example Procfile
+   `web: python manage.py collectstatic --noinput && gunicorn string_analyser.wsgi`
 
--Example runtime.txt
+#### Example runtime.txt
 `python-3.12.6`
 
--Example requirements.txt
-<pre>python
-Django>=5.0
-djangorestframework
-gunicorn
-whitenoise
-python-dotenv
-dj-database-url
-</pre>
+#### Example requirements.txt
+      <pre>python
+      Django>=5.0
+      djangorestframework
+      gunicorn
+      whitenoise
+      python-dotenv
+      dj-database-url
+      </pre>
 
 Then push to GitHub and connect your repo to Leapcell.io.
 leapcell will detect the Django app automatically and build it.
@@ -187,12 +187,12 @@ Use Postman Desktop Agent for localhost testing.
 
 Set header:
 
-Content-Type: application/json
+`Content-Type: application/json`
 
 
 Test locally:
 
-http://127.0.0.1:8000/strings/
+`http://127.0.0.1:8000/strings/`
 
 
 Test after deploy:
