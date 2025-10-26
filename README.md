@@ -88,9 +88,7 @@ Then open:
          {
            "value": "racecar"
          }
-         
-         
-         Response (201 Created)
+`Response` (`201` Created)
          
          {
            "id": "<sha256>",
