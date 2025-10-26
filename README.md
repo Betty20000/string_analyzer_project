@@ -31,7 +31,7 @@ Additionally:
 - **Django REST Framework**
 - **Whitenoise**
 - **dj-database-url**
-- **Railway Deployment**
+- **Leapcell Deployment**
 
 ---
 
