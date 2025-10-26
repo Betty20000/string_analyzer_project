@@ -37,8 +37,8 @@ Additionally:
 
 ## 🏗️ Setup & Installation
 ###1️⃣ Clone the Repository
-git clone https://github.com/Betty20000/string-analyzer.git
-cd string-analyzer
+git clone https://github.com/Betty20000/string_analyzer_project.git
+. cd string-analyzer
 
 ### 2️⃣ Create Virtual Environment
 python -m venv venv
@@ -67,7 +67,7 @@ DEBUG=True
 ALLOWED_HOSTS=127.0.0.1,localhost
 
 
-When deployed on Railway, these variables will be automatically injected:
+When deployed on Leapcell, these variables will be automatically injected:
 
 `DATABASE_URL`
 `DEBUG=False`
@@ -207,7 +207,7 @@ https://your-railway-url.up.railway.app/strings/
 🧑‍💻 Author
 
 Beatrice Mwangi
-Backend Developer | Python & Django Enthusiast
+Backend Developer | Python & Django / Flask Enthusiast
 🌐 GitHub: @Betty20000
 
 ###🚀 Backend Wizards Program — Stage 1
