@@ -41,56 +41,56 @@ git clone https://github.com/Betty20000/string_analyzer_project.git
 . cd string-analyzer
 
 ### 2️⃣ Create Virtual Environment
-python -m venv venv
+    *python -m venv venv
+
+#### Activate Virtual Environment:
+
+    Windows
+
+    `venv\Scripts\activate`
 
 
-Activate it:
+    Mac/Linux
 
-Windows
-
-venv\Scripts\activate
-
-
-Mac/Linux
-
-source venv/bin/activate
+    `source venv/bin/activate`
 
 ### 3️⃣ Install Dependencies
-pip install -r requirements.txt
+
+-pip install -r requirements.txt
 
 ## ⚙️ Configure Environment Variables
 
-Create a .env file in the project root:
+-Create a .env file in the project root:
 
-SECRET_KEY=django-insecure-yourkeyhere
-DEBUG=True
-ALLOWED_HOSTS=127.0.0.1,localhost
+    `SECRET_KEY=django-insecure-yourkeyhere`
+    `DEBUG=True`
+     `ALLOWED_HOSTS=127.0.0.1,localhost`
 
 
-When deployed on Leapcell, these variables will be automatically injected:
+-When deployed on Leapcell, these variables will be automatically injected:
 
 `DATABASE_URL`
 `DEBUG=False`
 `ALLOWED_HOSTS=*`
-`DISABLE_COLLECTSTATIC=0`
 
 ## 🧠 Running the Project Locally
-Run Migrations
-python manage.py makemigrations
-python manage.py migrate
+### Run Migrations
+    *python manage.py makemigrations
+    *python manage.py migrate
 
-Start the Server
-python manage.py runserver
+### Start the Server
+`python manage.py runserver`
 
 
 Then open:
-👉 http://127.0.0.1:8000/
+👉 `http://127.0.0.1:8000/`
 
 ## 🔗 API Endpoints
+
 ### 1️⃣ POST /strings/ — Analyze a new string
 
-Request
-
+`Request`
+<pre> ```python
 {
   "value": "racecar"
 }
@@ -111,80 +111,75 @@ Response (201 Created)
   },
   "created_at": "2025-10-21T12:34:56Z"
 }
-
+    ```</pre> 
 ### 2️⃣ GET /strings/ — List all analyzed strings
 
 Supports filters:
 
 Parameter	Description
-is_palindrome	true / false
-min_length	Minimum string length
-max_length	Maximum string length
-word_count	Exact word count
-contains_character	Character substring
+- is_palindrome=true / false
+- min_length = Minimum string length
+- max_length = Maximum string length
+- word_count = Exact word count
+- contains_character = Character substring
 
 Example:
 
-GET /strings/?is_palindrome=true&contains_character=a
+* `GET /strings/?is_palindrome=true&contains_character=a`
+* `GET /strings/?max_length=4`
 
 ### 3️⃣ GET /strings/?query=... — Natural Language Query
 
 Examples:
 
-/strings/?query=all single word palindromic strings
-/strings/?query=strings longer than 10 characters
+* `/strings/?query=all single word palindromic strings`
+* `/strings/?query=strings longer than 10 characters`
 
 ### 4️⃣ GET /strings/<string_value>/ — Fetch details of a specific string
 
 Example:
 
-GET /strings/racecar/
+* GET `/strings/racecar/`
 
 ### 5️⃣ DELETE /strings/<string_value>/ — Delete an analyzed string
 
 Example:
 
-DELETE /strings/racecar/
-
-
+* DELETE `/strings/racecar/`
+  
 Response:
+`204 No Content`
 
-204 No Content
+###🧾 Example Natural Queries
+#### Query	Parsed Filters
+-all single word palindromic strings	word_count=1, is_palindrome=true
+-strings longer than 10 characters	min_length=11
+-strings containing the letter z	contains_character=z
+-palindromic strings that contain the first vowel	is_palindrome=true, contains_character=a
 
-## 🧾 Example Natural Queries
-Query	Parsed Filters
-all single word palindromic strings	word_count=1, is_palindrome=true
-strings longer than 10 characters	min_length=11
-strings containing the letter z	contains_character=z
-palindromic strings that contain the first vowel	is_palindrome=true, contains_character=a
-⚡ Deployment on Railway
-Required Files:
+## ⚡ Deployment on Leapcell
+### 1. Required Files:
+    * Procfile
+    * requirements.txt
+    * .env
+-Example Procfile
+`web: python manage.py collectstatic --noinput && gunicorn string_analyser.wsgi`
 
-Procfile
+-Example runtime.txt
+`python-3.12.6`
 
-runtime.txt
-
-requirements.txt
-
-.env
-
-Example Procfile
-web: python manage.py collectstatic --noinput && gunicorn string_analyser.wsgi
-
-Example runtime.txt
-python-3.12.6
-
-Example requirements.txt
+-Example requirements.txt
+<pre>python
 Django>=5.0
 djangorestframework
 gunicorn
 whitenoise
 python-dotenv
 dj-database-url
+</pre>
 
-
-Then push to GitHub and connect your repo to Railway.
-Railway will detect the Django app automatically and build it.
+Then push to GitHub and connect your repo to Leapcell.io.
+leapcell will detect the Django app automatically and build it.
 
 ## ✅ API Testing Tips
 
@@ -202,7 +197,7 @@ http://127.0.0.1:8000/strings/
 
 Test after deploy:
 
-https://your-railway-url.up.railway.app/strings/
+`https://your-leapcell-url.leapcell.app/strings/`
 
 🧑‍💻 Author
 
