@@ -103,7 +103,7 @@ Then open:
                  "created_at": "2025-10-21T12:34:56Z"
                }
           
-### 2️⃣ GET /strings/ — List all analyzed strings
+### 2️⃣ GET `/strings` — List all analyzed strings
 
 Supports filters:
 
@@ -116,27 +116,28 @@ Parameter	Description
 
 Example:
 
-* `GET /strings/?is_palindrome=true&contains_character=a`
-* `GET /strings/?max_length=4`
+* `GET /strings?is_palindrome=true&contains_character=a`
+* `GET /strings?max_length=4`
 
 ### 3️⃣ GET /strings/?query=... — Natural Language Query
 
 Examples:
 
-* `/strings/?query=all single word palindromic strings`
-* `/strings/?query=strings longer than 10 characters`
+* `/strings/filter-by-natural-language?query=all single word palindromic strings`
+* `/strings/filter-by-natural-language?query=all%20single%20word%20palindromic%20strings`
+* `/strings/filter-by-natural-language?query=strings containing the letter z`
 
 ### 4️⃣ GET /strings/<string_value>/ — Fetch details of a specific string
 
 Example:
 
-* GET `/strings/racecar/`
+* GET `/strings/racecar`
 
 ### 5️⃣ DELETE /strings/<string_value>/ — Delete an analyzed string
 
 Example:
 
-* DELETE `/strings/racecar/`
+* DELETE `/strings/racecar`
   
 Response:
 `204 No Content`
