@@ -119,7 +119,7 @@ Example:
 * `GET /strings?is_palindrome=true&contains_character=a`
 * `GET /strings?max_length=4`
 
-### 3️⃣ GET /strings/?query=... — Natural Language Query
+### 3️⃣ GET /strings/filter-by-natural-language?query=... — Natural Language Query
 
 Examples:
 
@@ -127,13 +127,13 @@ Examples:
 * `/strings/filter-by-natural-language?query=all%20single%20word%20palindromic%20strings`
 * `/strings/filter-by-natural-language?query=strings containing the letter z`
 
-### 4️⃣ GET /strings/<string_value>/ — Fetch details of a specific string
+### 4️⃣ GET /strings/<string_value> — Fetch details of a specific string
 
 Example:
 
 * GET `/strings/racecar`
 
-### 5️⃣ DELETE /strings/<string_value>/ — Delete an analyzed string
+### 5️⃣ DELETE /strings/<string_value> — Delete an analyzed string
 
 Example:
 
