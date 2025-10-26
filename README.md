@@ -19,7 +19,7 @@ For every analyzed string, the API computes and stores:
 Additionally:
 - Supports **natural language filtering** (e.g., _“all single word palindromic strings”_)
 - Provides **list, detail, and delete** endpoints  
-- Uses **SQLite locally**, **PostgreSQL on Railway**
+- Uses **SQLite locally**, **PostgreSQL on Leapcell.io**
 - Supports **Whitenoise static serving** for production  
 
 ---
@@ -45,9 +45,9 @@ Additionally:
 
 ### Activate Virtual Environment:
     Windows:
-     venv\Scripts\activate`
+     venv\Scripts\activate
     Mac/Linux:
-     source venv/bin/activate`
+     source venv/bin/activate
 
 ### Install Dependencies
 
