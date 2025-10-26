@@ -143,10 +143,12 @@ Response:
 
 ### 🧾 Example Natural Queries
 #### Query	Parsed Filters
--all single word palindromic strings	word_count=1, is_palindrome=true
--strings longer than 10 characters	min_length=11
--strings containing the letter z	contains_character=z
--palindromic strings that contain the first vowel	is_palindrome=true, contains_character=a
+- all single word palindromic strings
+- word_count=1, is_palindrome=true
+- strings longer than 10 characters	min_length=11
+- strings containing the letter z	contains_character=z
+- palindromic strings that contain the first vowel
+- is_palindrome=true, contains_character=a
 
 ## ⚡ Deployment on Leapcell
 ### 1. Required Files:
